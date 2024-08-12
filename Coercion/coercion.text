@@ -1,0 +1,31 @@
+Abstract Operations - 
+Every time a value conversion happens, it is handled by one or more abstract operation
+with some rules defined in the spec. 
+Here we will look into three abstract operations: ToString, ToNumber and ToPrimitive.
+
+--> Abstract operations are used to aid the specification of the semantics of JavaScript language.
+
+
+
+
+Coercion - 
+Coercion aka 'type conversion' is a mechanism of converting one type to another. 
+In statically (strongly) typed language this process happens at compile time whereas coercion 
+is a run-time conversion for dynamically typed languages.
+
+In JavaScript, we can have two types of coercion: "implicit" and "explicit". 
+As the name implies, implicit coercion is the one which happens as a less obvious side effect of some intentional operation (i.e. it happens automatically). 
+On the contrary, the explicit conversion is obvious from the code that it is occurring intentionally (i.e. it happens manually).
+
+
+
+
+Summary:
+(1). JavaScript is a dynamically typed language where values have type—not the variables.
+(2). Coercion aka “type conversion” is a procedure of converting one value type to another; it happens at compile time for JavaScript.
+(3). Coercion can be of two types: implicit and explicit.
+(4). Abstract operations are the keys to understanding coercion. They are not actual operation in the language
+but are used to aid the specification of the semantics of JavaScript language.
+(5). Whenever we receive a non-primitive value for an operation where a primitive type was expected, ToPrimitive abstract operation is invoked.
+(6). For any non-primitive, ToPrimitive invokes two methods: valueOf() and toString(). 
+Depending upon the hint passed, valueOf() followed by toString() is invoked for the ‘number’ hint , and vice versa for “string”.
