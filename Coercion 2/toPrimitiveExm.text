@@ -1,0 +1,24 @@
+In JavaScript, the abstract operation "ToPrimitive" refers to the process of converting an object 
+to a primitive value (string, number, or boolean). This operation is automatically triggered when 
+an object is used in a context that requires a primitive value, such as when performing arithmetic operations,
+comparisons, or string concatenation.
+
+
+Steps in the ToPrimitive Operation - 
+When JavaScript needs to convert an object to a primitive value, it follows these steps:
+
+(1). Check for `Symbol.toPrimitive` method:
+JavaScript first checks if the object has a Symbol.toPrimitive method. If this method is defined, 
+JavaScript calls it with a specific hint ("number", "string", or "default") depending on the operation being performed.
+
+(2). Attempt `valueOf` method:
+If Symbol.toPrimitive is not available or doesn't return a primitive, JavaScript checks if the object 
+has a valueOf method. This method is intended to return a primitive value that represents the object.
+
+(3). Attempt `toString` method:
+If valueOf does not return a primitive value, JavaScript then checks the toString method. This method is
+meant to return a string that represents the object.
+
+(4). Error Handling:
+If none of these methods return a primitive value, JavaScript throws a TypeError because it 
+cannot convert the object to a primitive.
